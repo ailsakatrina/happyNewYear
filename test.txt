@@ -1,3 +1,8 @@
 this is master branch
+<<<<<<< HEAD
 i change the file on master branch 
 hello ,sub
+=======
+i change the file on master branch
+hello , master
+>>>>>>> master
