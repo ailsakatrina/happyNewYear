@@ -1,0 +1,87 @@
+<html>
+<head>
+<script src="jquery-2.0.0.min.js"></script>
+<style type="text/css">
+div{
+padding-bottom:5px;
+padding-left:5px;
+margin-top:5px;
+margin-left:5px;
+}
+body{
+background-color:red;
+padding:0;
+}
+.l1{
+	border:2px black solid;
+	background-color:green;
+	padding-bottom:5px;
+	padding-left:5px;
+	margin-top:5px;
+	margin-left:5px;
+}
+
+.l2{
+	border:2px black solid;
+	background-color:blue;
+	padding-bottom:5px;
+	padding-left:5px;
+	margin-top:5px;
+	margin-left:5px;
+}
+</style>
+
+<script>
+	var test = {
+		creatAjax : function(){
+			var link= $.ajax({
+				type: "POST";
+				url:"localhost/withPad2/padding.html";
+				async:false;
+			});
+			var theRequest = {};
+			var result = link.responseText.search;//path_from_questionMark[included]
+			var index = result.indexOf("?");
+			if(index!==-1){
+				var str = result.substr(1);//path_from_questionMark ？后面的内容
+				str = str.split("&"); //str为多个数组
+				for(var i = 0; i < str.length; i++){
+					var paraName = str[i].split("=")[0];//提取参数名字
+					var paraValue = str[i].split("=")[1];//提取对应的参数值
+					theRequest[paraName] = theRequest[paraValue];//将theRequest里面对应的参数值付给与str里同名参数
+				}
+			var ticketNum, queueNum, userType, padCode;
+			ticketNum = theRequest['ticketNum'];
+			queueNum = theRequest['queueNum'];
+			userType = theRequest['userType'];
+			padCode = theRequest['padCode'];
+
+			if (typeof(padCode) == "undefined") {
+	            $("#pad").hide();
+	        }
+	        userType = queueType[ticketNum.substring(0, 1).toUpperCase()];
+	        $('#ticketNum').html(ticketNum);
+	        $('#queueNum').html(queueNum);
+	        $('#userType').html(userType);
+	        $('#padCode').html(padCode);
+			}
+		}
+
+	}
+
+	$(document).ready(function(){
+		showTime();
+	});
+</script>
+</head>
+<body>
+
+
+<div style="background-color:white; border:black 2px dotted;">
+	<p class="l1" >line 1</p>
+	<p class="l2" >line 2</p>
+</div>
+
+
+</body>
+</html>

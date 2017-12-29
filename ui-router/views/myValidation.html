@@ -1,0 +1,12 @@
+<!-- 表单校验-->
+    <div class='main'>
+      <form name='myForm' novalidate>
+        表单校验:<input type='email' id='myEmail' name='email' ng-model="email" ng-init='email="xxt@126.com"' required >
+        <span style='color:red' ng-show='myForm.email.$error.required'>请填写邮箱！</span>
+        <span style='color:red' ng-show='myForm.email.$error.email'>邮箱格式错误！</span>
+        <br>
+        <input type='submit' ng-disabled='myForm.email.$error.required || myForm.email.$error.email' value='提交'>
+      </form>
+    </div>
+
+    

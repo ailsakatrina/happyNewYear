@@ -1,0 +1,24 @@
+var ingredient = {
+  "fruit":[
+    {
+      "name" : "apple",
+      "color" : "green"
+    },
+    {
+      "name" : "tomato",
+      "color" : "red"
+    },
+    {
+      "name" : "peach",
+      "color" : "pink"
+    },
+    {
+      "name" : "pitaya",
+      "color" : "white"
+    },
+    {
+      "name" : "lettuce",
+      "color" : "green"
+    }
+  ]
+};

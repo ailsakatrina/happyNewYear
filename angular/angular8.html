@@ -1,0 +1,34 @@
+<html>
+<head>
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<meta charset="utf-8">
+<title>angular DOM</title>
+</head>
+
+<body>
+  <div ng-app="app" ng-controller="disable">
+    <button ng-disabled="!mySwitch" ng-click="toggle()">{{text}}</button><br>
+    <input id="btn" type="checkbox" ng-model="mySwitch" ><span ng-hide="mySwitch">不</span>可操作
+    <p>{{mySwitch}}</p>
+
+
+
+    <p ng-show="condition">see me</p>
+    <input type="number" ng-model="num" value='2' step='2'>
+    <p ng-hide="num<3">see me</p>
+  </div>
+
+  <script>
+    var app = angular.module("app",[]);
+    app.controller("disable",function($scope){
+      $scope.mySwitch = true;
+      $scope.text = "点击出现";
+      $scope.condition = false;
+      $scope.toggle = function(){
+        $scope.condition = !$scope.condition;
+        $scope.text = $scope.condition?"点击消失":"点击出现";
+      }
+    });
+  </script>
+</body>
+</html>
