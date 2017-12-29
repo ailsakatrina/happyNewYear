@@ -1,2 +1,2 @@
 this is master branch
-i change the file on sub branch
+i change the file on master branch  
