@@ -1,0 +1,51 @@
+/**
+* @file 本css控制强迫症测试页面内所有按钮的样式
+* @author 许琇婷
+* @version v0.1
+*/
+
+
+/*测试题部分的按钮*/
+/*按钮*/
+.buttonPart{
+	left:279px;
+	top:448px;
+	width:403px;
+	height:48px;
+	position:fixed;
+}
+
+
+/*btn为按钮边框*/
+/*上一页*/
+.btn1{
+	left:279px;
+	top:448px;
+	width:144px;
+	height:48px;
+	position:fixed;
+	cursor: pointer;
+}
+
+
+/*下一页*/
+.btn2{
+	left:538px;
+	top:448px;
+	width:144px;
+	height:48px;
+	position:fixed;
+	cursor: pointer;
+}
+
+
+/*答案部分重测一次按钮*/
+.btn{
+	left:408px;
+	top:478px;
+	width:144px;
+	height:48px;
+	position:fixed;
+	cursor: pointer;
+}
+

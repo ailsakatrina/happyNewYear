@@ -1,0 +1,668 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>page3</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="stylesheet" href="js/thirdjs/bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src = "js/thirdjs/jquery-2.0.0.min.js"></script>
+    <script src="js/sdkjs/RobotSDK.js"></script>
+    <script src="js/ywjs/robotLog.js"></script>
+    <script src="js/common/set.js"></script>
+    <script src="js/thirdjs/qrcode.min.js"></script>
+    <script src="js/thirdjs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/ywjs/takenumber-token.js"></script>
+    <script src="js/ywjs/takenumber-dynamics-layout-firstview.js"></script>
+    <script src="js/ywjs/takenumber-dynamics-layout-secondview.js"></script>
+    <script src="js/ywjs/takenumber-qrcode.js"></script>
+    <script src="js/ywjs/takenumber-scanqr-done.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/zhongping.css" />
+    <link rel="stylesheet" type="text/css" href="css/musicPlayer.css" />
+    <link rel="stylesheet" type="text/css" href="css/gallery/style.css" />
+   
+
+    <script src="js/sdkjs/sencecontrol.js"></script>
+    <script src="js/interfacejs/android.js"></script>
+    <script src="js/ywjs/fanye.js"></script>
+    <script src="js/config/QAConfig.js"></script>
+    <script src="js/ywjs/jiugongge.js"></script>
+    <script src="js/ywjs/tuijianyewu.js"></script>
+    <script src="js/thirdjs/touchSwipe/jquery.touchSwipe.js"></script>
+    <script src="js/thirdjs/html5media.min.js"></script>
+    <script src="js/thirdjs/gallery/jquery.gallery.js"></script>
+    <script src="js/thirdjs/gallery/modernizr.custom.53451.js"></script>
+    <script src="js/ywjs/ywtj.js"></script>
+    <script src="js/ywjs/yyqh.js"></script>
+    <script src="js/common/lockScreen.js"></script>
+    <script src="js/common/generateQRcode.js"></script>
+    <script src="js/thirdjs/music/musicInterface.js"></script>
+    <script src="js/ywjs/khhdDetail.js"></script>
+    <script src="js/ywjs/speakContext.js"></script>
+    <script src="js/ywjs/reportStatistics.js"></script>
+    <script src="js/ywjs/reportItem.js"></script>
+    <script src="js/ywjs/reportQRcode.js"></script>
+    <script src="js/ywjs/reportStatistics-takenumber.js"></script>
+    <script src="js/ywjs/recommendQRcode.js"></script>
+
+
+   <!-- ************************************-->
+    <link type='text/css' href='css/self-test/ocd-test/test-part.css' rel="stylesheet">
+    <link type='text/css' href='css/self-test/ocd-test/answer-part.css' rel="stylesheet">
+    <link type='text/css' href='css/self-test/ocd-test/button.css' rel="stylesheet">
+    <link type='text/css' href='css/self-test/family-insurance-test/question-part.css' rel="stylesheet">
+    <link type='text/css' href='css/self-test/family-insurance-test/button.css' rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/self-test/self-test-page.css" />
+
+    <!--js文件-->
+    <script type="text/javascript" src="js/ywjs/self-test/ocd-test/initialization.js" > </script>
+    <script type="text/javascript" src='js/ywjs/self-test/ocd-test/change-page.js'></script>
+    <script type="text/javascript" src='js/ywjs/self-test/ocd-test/choose-answer.js'></script>
+    <script type="text/javascript" src='js/ywjs/self-test/ocd-test/test-again.js'></script>
+    <script type="text/javascript" src="js/ywjs/self-test/self-test.js"></script>
+    <script type="text/javascript" src="js/ywjs/self-test/familyInsurance-test/family-insurance-test.js"></script>
+    <script type="text/javascript" src="js/ywjs/self-test/familyInsurance-test/fiInitialization.js"></script>
+    <script type="text/javascript" src="js/ywjs/self-test/familyInsurance-test/change-page.js"></script>
+    <script type="text/javascript" src="js/ywjs/self-test/familyInsurance-test/choose-answer.js"></script>
+
+
+
+    <link rel='stylesheet' href='css/style.css'>
+
+    <link rel="stylesheet" type="text/css" href="css/virtualKeyboard/style.css"></link>
+    <script type="text/javascript" src="js/ywjs/panel.js"></script>
+    <style>
+        @font-face {
+            font-family: DongQing;
+            src: url('font/DongQingHT.otf');
+        }
+    </style>
+    <style>
+    *{
+      margin:0px;
+			padding:0px;
+      font-family:DongQing;
+
+    }
+	</style>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    RobotSDK.clearUserKeyWords();
+    RobotSDK.getRobotId();
+    setJiugonggeDisplay();
+    // TakenumberQRCode.initQRCode('takenumberQRCode','280','280');
+    sanQRProductCode = new GenerateQRcode();
+    sanQRProductCode.initQRCode('productQRCode','140','140');
+    scanQRActivityCode = new GenerateQRcode();
+    scanQRActivityCode.initQRCode('activityQRCode','140','140');
+    scanQRJGJCode = new GenerateQRcode();
+    scanQRJGJCode.initQRCode('JGJQRid','280','280');
+    // GenerateQRcode.initQRCode();
+    initSlider();
+    TakenumberToken.getICCSToken();
+    TakenumberToken.getWeChatToken();
+    });
+</script>
+  </head>
+  <body style="width:960px;height:600px;overflow:hidden;" oncontextmenu="return false">
+    <!-- 锁屏界面 -->
+    <div id="indexImg" style="width:960px;height:600px;display:none;overflow:hidden;position:absolute;;left:0px;top:0px;z-index:1003;background-color:rgba(67, 67, 67, 1);" onclick="setIndexNone()">
+    <img src="images/daiji/daiji.gif" style="width:960px;height:600px;" loop="loop" />
+    </div>
+    <!-- 金管家二维码界面 -->
+    <div id="JGJQRcode" style="width:960px;height:600px;display:none;overflow:hidden;position:absolute;;left:0px;top:0px;z-index:1003;">
+    <img src="images/QRcode/QRcode-bg.png" style="width:960px;height:600px;"/>
+    <div id="JGJQRid" style="width:280px;height:280px;position:absolute;left:342px;top:202px;"></div>
+    <!-- <img src="images/QRcode/QRcode.png" /> -->
+    <img src="images/QRcode/QRcode-cancle.png" style="width:240px;height:70px;position:absolute;left:363px;top:490px;" onclick="recommendQRcode.cancleBtnEvent();"/>
+    </div>
+    <!-- 首页界面 -->
+    <div id="jiugongge" style="display:none;text-align:center;width:960px;height:600px;overflow:hidden;position:absolute;left:0px;top:0px;z-index:100;background-color:rgba(252, 251, 250, 100);display:block;" >
+      <img style="width:960px;height:48px;position:absolute;left:0px;top:0px;" src="images/home/top.png" />
+     <!-- <img id="yyqh_home" style="position:absolute;left:120px;top:420px;" src="images/home/yyqh.png" onclick="enterOneYeWu(this)" /> -->
+      <!-- <img id="cptj_home" style="position:absolute;left:384px;top:420px;" src="images/home/cptj.png" onclick="enterOneYeWu(this)"/> -->
+      <img id="cptj_home" style="position:absolute;left:144px;top:414px;" src="images/home/cptj.png" onclick="enterOneYeWu(this)"/>
+      <img id="khhd_home" style="position:absolute;left:384px;top:414px;" src="images/home/khhd.png" onclick="enterOneYeWu(this)"/>
+      <img id="selfTestHome" style="position:absolute;left:624px;top:414px;" src="images/self-test-xxt/self-test.png" onclick="selfTestDisplay()"/>
+
+
+
+      <!-- <img id="khhd_home" style="position:absolute;left:648px;top:420px;" src="images/home/khhd.png" onclick="enterOneYeWu(this)"/> -->
+      <!-- <img id="khhd_home" style="position:absolute;left:197px;top:66px;" src="images/home/img_cptj_1.png"/> -->
+
+      <div id="lunbo_home" style="position:absolute;left:197px;top:66px;">
+       <ul class="slider-main" >
+        <li class="slider-panel">
+         <img src="images/home/slide/1.png" id="p_shaoerpinganfu" onclick="DetailPageDisplay(this);">
+        </li>
+        <li class="slider-panel">
+         <img src="images/home/slide/2.png" id="p_pinganfu" onclick="DetailPageDisplay(this);">
+        </li>
+        <li class="slider-panel">
+         <img src="images/home/slide/3.png" id="p_anxinbao" onclick="DetailPageDisplay(this);">
+        </li>
+        <li class="slider-panel">
+         <img src="images/home/slide/4.png" id="p_zhinengxing" onclick="DetailPageDisplay(this);">
+        </li>
+        <li class="slider-panel">
+         <img src="images/home/slide/5.png" id="a_one" onclick="DetailPageDisplay(this);">
+        </li>
+       </ul>
+       <div class="slider-extra">
+        <ul class="slider-nav">
+         <li class="slider-item">1</li>
+         <li class="slider-item">2</li>
+         <li class="slider-item">3</li>
+         <li class="slider-item">4</li>
+         <li class="slider-item">5</li>
+        </ul>
+        <div class="slider-page">
+         <a class="slider-pre" href="javascript:;;"><</a>
+         <a class="slider-next" href="javascript:;;">></a>
+        </div>
+       </div>
+      </div>
+
+      <img  style="position:absolute;left:828px;top:528px;" src="images/home/hjdtjl.png" onclick=""/>
+      <img  style="position:absolute;left:900px;top:528px;" src="images/home/stop.png" onclick="noticeServerCode('stopMotion');"/>
+  </div>
+
+  <!-- 预约取号-->
+  <div id="yuyuequhao" style="text-align:center;width:960px;height:600px;overflow:hidden;position:absolute;left:0px;top:0px;background-color:rgba(252, 251, 250, 100);display:none;z-index:100;" >
+    <img style="width:960px;height:48px;position:absolute;left:0px;top:0px;" src="images/yyqh/top.png" />
+    <img style="position:absolute;left:24px;top:87px;" src="images/yyqh/certificateTip.png" />
+    <img style="position:absolute;left:24px;top:126px;" src="images/yyqh/identificationTip.png" />
+    <img style="position:absolute;left:44px;top:207px;" src="images/yyqh/certType.png" />
+    <img style="position:absolute;left:44px;top:271px;" src="images/yyqh/certNo.png" />
+<!--     <img style="position:absolute;left:144px;top:262px;" src="images/yyqh/input.png" /> -->
+    <img style="position:absolute;left:24px;top:332px;" src="images/yyqh/phoneTip.png" />
+    <img style="position:absolute;left:24px;top:387px;" src="images/yyqh/phone.png" />
+<!--     <img style="position:absolute;left:144px;top:378px;" src="images/yyqh/input.png" /> -->
+<!--     <img style="position:absolute;left:24px;top:451px;" src="images/yyqh/yyrxm.png"/> -->
+    <img id="sumbit_xxrz" style="position:absolute;left:154px;top:457px;" src="images/yyqh/sure.png" onclick="submitQuhao()"/>
+    <!-- <img style="position:absolute;left:210px;top:476px;" src="images/yyqh/submit.png"/> -->
+    <select id="zjlx_yyqh" class="form-control" style="position:absolute;left:144px;top:198px;width:160px;height:36px;">
+      <option value="1">身份证</option>
+      <option value="6">港澳通行证</option>
+      <option value="3">军人证</option>
+      <option value="2">护照</option>
+      <option value="0">户口本</option>
+    </select>
+
+    <input id="zjhm_yyqh" class="form-control" style="position:absolute;left:144px;top:262px;width:280px;height:36px;"   placeholder="点击此处输入您的证件号码" onclick="VirtualKeyboard.setInputObj(this);" onfocus="this.blur();">
+    <input id="phone_yyqh" class="form-control" style="position:absolute;left:144px;top:378px;width:280px;height:36px; " placeholder="点击此处输入您的手机号码" onclick="VirtualKeyboard.setInputObj(this);" onfocus="this.blur();">
+<!--     <input id="srxm_yyqh" style="position:absolute;left:144px;top:442px;width:280px;height:36px;" class="form-control" placeholder="点击此处输入您的姓名">  -->
+
+
+    <div id="Panel">
+        <div id="inputPanel">
+        <img id="pre_alp" src="images/yyqh/input_pre_alp.png" style="display:none;" />
+        <img id="alphabetPanel" src="images/yyqh/alphabet.png" usemap="#map1"/>
+        <map name="map1">
+            <area shape="circle" coords="24,24,24" href="#" alt="a" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="84,24,24" href="#" alt="b" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="144,24,24" href="#" alt="c" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="204,24,24" href="#" alt="d" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="264,24,24" href="#" alt="e" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="324,24,24" href="#" alt="f" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="384,24,24" href="#" alt="g" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="24,88,24" href="#" alt="h" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="84,88,24" href="#" alt="i" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="144,88,24" href="#" alt="j" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="204,88,24" href="#" alt="k" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="264,88,24" href="#" alt="l" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="324,88,24" href="#" alt="m" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="384,88,24" href="#" alt="n" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="24,152,24" href="#" alt="o" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="84,152,24" href="#" alt="p" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="144,152,24" href="#" alt="q" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="204,152,24" href="#" alt="r" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="264,152,24" href="#" alt="s" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="324,152,24" href="#" alt="t" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="384,152,24" href="#" alt="u" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="24,216,24" href="#" onclick="VirtualKeyboard.del(this);">
+            <area shape="circle" coords="84,216,24" href="#" alt="v" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="144,216,24" href="#" alt="w" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="204,216,24" href="#" alt="x" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="264,216,24" href="#" alt="y" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="324,216,24" href="#" alt="z" onclick="VirtualKeyboard.add(this);">
+            <area shape="circle" coords="384,216,24" href="#" onclick="VirtualKeyboard.refresh(this);">
+        </map>
+        <img id="pre_num" src="images/yyqh/input_pre_num.png" style="display:none;" />
+        <img id="numberPanel" src="images/yyqh/number.png" style="display: none;" usemap="#map2"/>
+        <map name="map2">
+                 <area shape="circle" coords="28,28,28" href="#" alt="1" onclick="VirtualKeyboard.add(this);">
+                 <area shape="circle" coords="120,28,28" href="#" alt="2" onclick="VirtualKeyboard.add(this);">
+                 <area shape="circle" coords="212,28,28" href="#" alt="3" onclick="VirtualKeyboard.add(this);">
+                 <area shape="circle" coords="28,96,28" href="#" alt="4" onclick="VirtualKeyboard.add(this);">
+                 <area shape="circle" coords="120,96,28" href="#" alt="5" onclick="VirtualKeyboard.add(this);">
+                 <area shape="circle" coords="212,96,28" href="#" alt="6" onclick="VirtualKeyboard.add(this);">
+                 <area shape="circle" coords="28,164,28" href="#" alt="7" onclick="VirtualKeyboard.add(this);">
+                 <area shape="circle" coords="120,164,28" href="#" alt="8" onclick="VirtualKeyboard.add(this);">
+                 <area shape="circle" coords="212,164,28" href="#" alt="9" onclick="VirtualKeyboard.add(this);">
+                 <area shape="circle" coords="28,232,28" href="#" onclick="VirtualKeyboard.del(this);">
+                 <area shape="circle" coords="120,232,28" href="#" alt="0" onclick="VirtualKeyboard.add(this);">
+                 <area shape="circle" coords="212,232,28" href="#" onclick="VirtualKeyboard.refresh(this);">
+        </map>
+        </div>
+        <div id="alphabet" class="focus" onclick="VirtualKeyboard.toggle(this);"><span>字母</span></div>
+        <div id="number" class="blur" onclick="VirtualKeyboard.toggle(this);"><span>数字</span></div>
+    </div>
+
+    <img style="position:absolute;left:756px;top:528px;" src="images/common/home.png" onclick="setBackToHome()"/>
+    <img style="position:absolute;left:828px;top:528px;" src="images/common/rgfw.png" onclick=""/>
+    <img style="position:absolute;left:900px;top:528px;" src="images/common/stop.png" onclick="noticeServerCode('stopMotion');"/>
+  </div>
+
+  <!-- 预约取号 办理业务&缴纳保费-->
+<!--   <div id="yuyuequhao_sec" style="text-align:center;width:960px;height:600px;overflow:hidden;position:absolute;left:0px;top:0px;background-color:rgba(252, 251, 250, 100);display:none;z-index:100;" >
+    <img style="width:960px;height:600px;position:absolute;left:0px;top:0px;" src="images/yyqh/bg.png" />
+
+    <img style="position:absolute;left:336px;top:119px;" src="images/yyqh/qh2/blyw.png" title="vip" id='yyqhblyw' onclick="blywFun(this)"/>
+    <img style="position:absolute;left:336px;top:324px;" src="images/yyqh/qh2/jnbf.png" onclick="jnbfFun()"/>
+
+    <img style="position:absolute;left:756px;top:532px;" src="images/common/home.png" onclick="setBackToHome()"/>
+    <img style="position:absolute;left:828px;top:532px;" src="images/common/rgfw.png" onclick="sethjdtjlDisplay()"/>
+    <img style="position:absolute;left:900px;top:532px;" src="images/common/stop.png" onclick="noticeServerCode('stopMotion');"/>
+  </div> -->
+    <!-- 预约取号 办理业务&缴纳保费-->
+    <div id="yuyuequhao_sec" style="text-align:center;width:960px;height:600px;overflow:hidden;position:absolute;left:0px;top:0px;background-color:rgba(252, 251, 250, 100);display:none;z-index:100;">
+        <img style="width:960px;height:48px;position:absolute;left:0px;top:0px;" src="images/yyqh/top.png" />
+        <div id="DynamicsFirstviewDiv" style="display:block;">
+          <div id = "DynamicsFirstviewLayout1" style="width:960px;height:150px;position:absolute;top:166px;"></div>
+          <div id = "DynamicsFirstviewLayout2" style="width:960px;height:150px;position:absolute;top:310px;"></div>
+        </div>
+        <img style="position:absolute;left:408px;top:87px;" src="images/yyqh/choose.png" />
+        <img style="position:absolute;left:684px;top:528px;" src="images/common/back.png" onclick="setBackToYyqh()" />
+        <img style="position:absolute;left:756px;top:532px;" src="images/common/home.png" onclick="setBackToHome()" />
+        <img style="position:absolute;left:828px;top:532px;" src="images/common/rgfw.png" onclick="" />
+        <img style="position:absolute;left:900px;top:532px;" src="images/common/stop.png" onclick="noticeServerCode('stopMotion');" />
+    </div>
+      <!-- 预约取号 办理业务-初级-->
+    <div id="yuyuequhao_chuji" style="text-align:center;width:960px;height:600px;overflow:hidden;position:absolute;left:0px;top:0px;background-color:rgba(252, 251, 250, 100);display:none;z-index:100;">
+    <img style="width:960px;height:48px;position:absolute;left:0px;top:0px;" src="images/yyqh/top.png" />
+        <div id="DynamicsSecondviewDiv" style="display:block;">
+          <div id = "DynamicsSecondviewLayout1" style="width:960px;height:150px;position:absolute;top:166px;"></div>
+          <div id = "DynamicsSecondviewLayout2" style="width:960px;height:150px;position:absolute;top:310px;"></div>
+        </div>
+        <img id="sumbit" style="position:absolute;left:154px;top:457px;" src="images/yyqh/sure.png" onclick="TakenumberDynamicsSecondview.businessSubmitClick()"/>
+        <img style="position:absolute;left:292px;top:87px;" src="images/yyqh/confirm.png" />
+        <img style="position:absolute;left:684px;top:528px;" src="images/common/back.png" onclick="setBackToYyqhSec()" />
+        <img style="position:absolute;left:756px;top:528px;" src="images/common/home.png" onclick="setBackToHome()" />
+        <img style="position:absolute;left:828px;top:528px;" src="images/common/rgfw.png" onclick="" />
+        <img style="position:absolute;left:900px;top:528px;" src="images/common/stop.png" onclick="noticeServerCode('stopMotion');" />
+    </div>
+
+  <!-- 预约取号 二维码-->
+  <div id="yuyuequhao_erweima" style="text-align:center;width:960px;height:600px;overflow:hidden;position:absolute;left:0px;top:0px;background-color:rgba(252, 251, 250, 100);display:none;z-index:100;" >
+    <img style="width:960px;height:48px;position:absolute;left:0px;top:0px;" src="images/yyqh/top.png" />
+
+    <img style="position:absolute;left:241px;top:137px;" src="images/yyqh/qh3/dizihao.png" />
+    <!-- <img style="position:absolute;left:340px;top:195px;" src="images/yyqh/qh3/sider_ewm.png" onclick="erweimaFun()"/> -->
+    <div id="takenumberQRCode" style="position:absolute;left:345px;top:200px;width:280px;height:280px;">
+      <img id="QRcodeImg" src="" style="width: 100%;height: 100%">
+    </div>
+
+    <img style="position:absolute;left:756px;top:528px;" src="images/common/home.png" onclick="TakenumberQRCode.exitToHome()"/>
+    <img style="position:absolute;left:828px;top:528px;" src="images/common/rgfw.png" onclick=""/>
+    <img style="position:absolute;left:900px;top:528px;" src="images/common/stop.png" onclick="noticeServerCode('stopMotion');"/>
+  </div>
+
+  <!-- 预约取号 祝你心情愉快-->
+  <div id="yuyuequhao_xqyk" style="text-align:center;width:960px;height:600px;overflow:hidden;position:absolute;left:0px;top:0px;background-color:rgba(252, 251, 250, 100);display:none;z-index:100;" >
+    <img style="width:960px;height:48px;position:absolute;left:0px;top:0px;" src="images/yyqh/top.png" />
+    <div id="printCodeInfoDiv">
+      <div id="printCodeandPinCode" style="width:960px;height:50px;position:absolute;top:60px;font-size:26px;"></div>
+      <div id="msgInfo" style="width:960px;height:50px;position:absolute;top:120px;font-size:26px;"></div>
+    </div>
+
+    <img style="position:absolute;left:416px;top:171px;" src="images/yyqh/qh4/simlie.png" />
+    <img style="position:absolute;left:158px;top:331px;" src="images/yyqh/qh4/yk.png"/>
+
+    <img style="position:absolute;left:756px;top:528px;" src="images/common/home.png" onclick="TakenumberQRCodeDone.exitToHome()"/>
+    <img style="position:absolute;left:828px;top:528px;" src="images/common/rgfw.png" onclick=""/>
+    <img style="position:absolute;left:900px;top:528px;" src="images/common/stop.png" onclick="noticeServerCode('stopMotion');"/>
+  </div>
+
+  <!--预约取号需要您的证件信息-->
+  <div id="yuyuequhao_rzxx" style="width:960px;height:600px;display:none;overflow:hidden;position:absolute;left:0px;top:0px;z-index:1002;">
+    <div style="width:960px;height:600px;position:absolute;;left:0px;top:0px;background-color:#000000;opacity:0.6;" onclick="yyqhRzxxCancelToSeeClick(this)"></div>
+    <img id="yyqh_rzxx" style="position:absolute;left:220px;top:201px;" src="images/yyqh/tips.png" />
+    <img id="yyqh_rzxx_cancle" style="position:absolute;left:691px;top:201px;" src="images/yyqh/turn_off.png" onclick="yyqhRzxxCancelToSeeClick(this)" />
+  </div>
+
+  <!--身份证号码信息填写不正确-->
+
+  <div id="yuyuequhao_IDConfirm" style="width:960px;height:600px;display:none;overflow:hidden;position:absolute;left:0px;top:0px;z-index:1002;">
+
+    <div style="width:960px;height:600px;position:absolute;;left:0px;top:0px;background-color:#000000;opacity:0.6;" onclick="setYyqhIDconfirmNone()"></div>
+
+    <img id="yyqh_IDConfirm" style="position:absolute;left:220px;top:201px;" src="images/yyqh/tipsIDConfirm.png" />
+
+    <img id="yyqh_IDConfirm_cancle" style="position:absolute;left:691px;top:201px;" src="images/yyqh/turn_off.png" onclick="setYyqhIDconfirmNone()" />
+
+  </div>
+
+    <!-- 业务推荐详情界面 -->
+    <div id = "tuijianDetailPage" style="display:none;width:960px;height:600px;position:absolute;left:0px;top:0px;z-index:1000;background-color:#fff">
+      <img src = "images/yyqh/top.png" style="width:960px;height:48px;position:absolute;left:0px;top:0px;"/>
+      <img style="position:absolute;left:684px;top:528px;" src="images/common/back.png" onclick="tuijianDetailBackforward()"/>
+      <img style="position:absolute;left:756px;top:528px;" src="images/common/home.png" onclick="exitToHome()"/>
+      <img style="position:absolute;left:828px;top:528px;" src="images/common/rgfw.png" onclick=""/>
+      <img style="position:absolute;left:900px;top:528px;" src="images/common/stop.png" onclick="noticeServerCode('stopMotion');"/>
+      <img id="productInfo" src = "images/fanye/shaoerpinganfu/productInfo.png" style="position:absolute;left:684px;top:86px"/>
+      <img id = "pptImg" style="position:absolute;left:24px;top:86px;width:636px;height:398px;-webkit-border-radius:10px;" src="images/fanye/shaoerpinganfu/1.png" />
+
+      <div id="productQRCode" style="position:absolute;left:710px;top:270px;width:140px;height:140px;"></div>
+      <!-- <img id="stoppage" style="position:absolute;left:613px;top:87px;width:44px;height:44px;" src="images/fanye/close.png" onclick="stoppresentClick()"/> -->
+      <img id="nextpage" style="display:block;position:absolute;left:590px;top:210px;width:80px;height:150px;" src="images/fanye/pageNext.png" onclick="nextpageClick()"/>
+      <img id="prepage" style="display:none;position:absolute;left:10px;top:210px;width:80px;height:150px;" src="images/fanye/pagePre.png" onclick="prepageClick()"/>
+      <!-- <img id="guide" style="position:absolute;left:260px;top:238px;" src="images/fanye/guide.png" /> -->
+    </div>
+    <!-- 业务推荐界面 -->
+    <div id="gallerybaliyw" style="width:960px;height:600px;display:none;overflow:hidden;position:absolute;left:0px;top:0px;z-index:101;background-color:#FDFBFA;">
+      <div style="width:960px;height:600px;position:absolute;left:0px;top:0px;background-color:#FDFBFA;opacity:0.6;"></div>
+      <img id = "ywtj_title" style="width:960px;height:48px;position:absolute;left:0px;top:0px;" src="images/yyqh/top.png" />
+      <img id = "ywtj_home" style="position:absolute;left:756px;top:528px;" src="images/common/home.png" onclick="ywtjBackToHome()"/>
+      <img id = "ywtj_rgfw" style="position:absolute;left:828px;top:528px;" src="images/common/rgfw.png" onclick=""/>
+      <img id = "ywtj_stop" style="position:absolute;left:900px;top:528px;" src="images/common/stop.png" onclick="enterOneYeWu(this)"/>
+
+
+      <section id="dg-container" style="position:absolute;left:0px;top:0px;width:960px;height:500px;-webkit-border-radius:10px;" class="dg-container">
+				<div class="dg-wrapper" style="position:absolute;left:240px;top:135px;">
+					<a><img id="shaoerpinganfu" class = "touchSwipetest" style="width:480px;height:360px" src="images/fanye/shaoerpinganfu/index.png"  alt="image01" onclick="enterYewutuijian(this)"></a>
+          <a ><img id="pinganfu" class = "touchSwipetest" style="width:480px;height:360px" src="images/fanye/pinganfu/index.png"  alt="image02" onclick="enterYewutuijian(this)"></a>
+          <a ><img id="anxinbao" class = "touchSwipetest" style="width:480px;height:360px" src="images/fanye/anxinbao/index.png"  alt="image03" onclick="enterYewutuijian(this)"></a>
+          <a ><img id="zhinengxing" class = "touchSwipetest" style="width:480px;height:360px" src="images/fanye/zhinengxing/index.png"  alt="image04" onclick="enterYewutuijian(this)"></a>
+        </div>
+				<nav>
+					<span class="dg-prev">&lt;</span>
+					<span class="dg-next">&gt;</span>
+				</nav>
+			</section>
+    </div>
+    <!-- 客户活动界面 -->
+    <div id="gallery_khhd" style="width:960px;height:600px;display:none;overflow:hidden;position:absolute;left:0px;top:0px;z-index:101;background-color:#FDFBFA;">
+      <div style="width:960px;height:600px;position:absolute;left:0px;top:0px;background-color:#FDFBFA;opacity:0.6;"></div>
+      <img id = "khhd_title" style="width:960px;height:48px;position:absolute;left:0px;top:0px;" src="images/yyqh/top.png"" />
+      <img id = "khhd_home" style="position:absolute;left:756px;top:528px;" src="images/common/home.png" onclick="khhdBackToHome()"/>
+      <img id = "khhd_rgfw" style="position:absolute;left:828px;top:528px;" src="images/common/rgfw.png" onclick=""/>
+      <img id = "khhd_stop" style="position:absolute;left:900px;top:528px;" src="images/common/stop.png"" onclick="enterOneYeWu(this)"/>
+
+
+      <section id="dg-container_khhd" style="position:absolute;left:0px;top:0px;width:960px;height:500px;-webkit-border-radius:10px;" class="dg-container">
+				<div class="dg-wrapper" style="position:absolute;left:240px;top:135px;">
+					<a><img id="one" class = "touchSwipe_khhd" style="width:480px;height:360px" src="images/customerActivity/one/1.png"  alt="image01" onclick="enterKeHuHuoDong(this)"></a>
+          <a ><img id="two" class = "touchSwipe_khhd" style="width:480px;height:360px" src="images/customerActivity/two/1.png"  alt="image02" onclick="enterKeHuHuoDong(this)"></a>
+          <a ><img id="three" class = "touchSwipe_khhd" style="width:480px;height:360px" src="images/customerActivity/three/1.png"  alt="image03" onclick="enterKeHuHuoDong(this)"></a>
+          <a ><img id="four" class = "touchSwipe_khhd" style="width:480px;height:360px" src="images/customerActivity/four/1.png"  alt="image04" onclick="enterKeHuHuoDong(this)"></a>
+          </div>
+				<nav>
+					<span class="dg-prev">&lt;</span>
+					<span class="dg-next">&gt;</span>
+				</nav>
+			</section>
+    </div>
+    <!-- 客户活动详情界面 -->
+      <div id = "kehuhuodongDetailPage" style="display:none;width:960px;height:600px;position:absolute;left:0px;top:0px;z-index:1000;background-color:#fff">
+        <img style="width:960px;height:48px;position:absolute;left:0px;top:0px;" src="images/yyqh/top.png"/>
+        <img style="position:absolute;left:684px;top:528px;" src="images/common/back.png" onclick="kehuhuodongBackforward()"/>
+        <img style="position:absolute;left:756px;top:528px;" src="images/common/home.png" onclick="kehuhuodongExitToHome()"/>
+        <img style="position:absolute;left:828px;top:528px;" src="images/common/rgfw.png" onclick=""/>
+        <img style="position:absolute;left:900px;top:528px;" src="images/common/stop.png" onclick="noticeServerCode('stopMotion');"/>
+        <img id="productInfo_khhd" src = "images/customerActivity/one/productInfo.png" style="position:absolute;left:684px;top:86px"/>
+        <img id = "pptImg_khhd" style="position:absolute;left:24px;top:86px;border:1px solid;width:636px;height:398px;-webkit-border-radius:10px;" src="images/customerActivity/one/1.png" />
+        <!-- <div style="position:absolute;left:24px;top:86px;width:636px;height:398px;overflow:hidden"> -->
+        <!-- <video id = "pptVideo_khhd" style="position:absolute;left:24px;top:86px;border:1px solid;width:636px;height:398px;border-radius:10px;" src="" x5-video-player-type="h5" ></video> -->
+          <!-- <div id = "videoBlack" style="position:absolute;left:0px;top:0px;border:10px solid red;width:50px;height:50px;background:#FFF"></div> -->
+          <!-- <div style="background:#000;position:absolute;left:610px;top:460px;width:50px;height:25px;z-index:10090"></div> -->
+        <!-- </div> -->
+        <div id="activityQRCode" style="position:absolute;left:710px;top:270px;width:140px;height:140px;"></div>
+
+      </div>
+    <!-- 呼叫大堂经理弹出界面 -->
+    <div id="hjdtjlid" style="width:960px;height:600px;display:none;overflow:hidden;position:absolute;left:0px;top:0px;z-index:1002;">
+      <div style="width:960px;height:600px;position:absolute;;left:0px;top:0px;background-color:#000000;opacity:0.6;"></div>
+      <img id="hjdtjlimg" style="position:absolute;left:295px;top:206px;" src="images/bank/hjdtjl_pop.png" />
+      <img id="hjdtjlsure" title="payh" style="position:absolute;left:330px;top:370px;" src="images/bank/sure_pop.png" onclick="hjdtjlSureToSeeClick(this)" />
+      <img id="hjdtjlcancel" style="position:absolute;left:525px;top:370px;" src="images/bank/back.png" onclick="hjdtjlCancelToSeeClick(this)" />
+    </div>
+    <!-- 音乐界面 -->
+    <div id="indexMusic" style="width:960px;height:600px;display:none;overflow:hidden;position:absolute;;left:0px;top:0px;z-index:100;background-color:rgba(67, 67, 67, 1);" onclick="musicClick()">
+        <div class="music-player1" style="position:absolute;left:50px;top:100px;">
+          <img src="css/image_png_00002.png" class="album1" />
+          <div class="dash1">
+            <div class="seeker1" style="box-sizing:content-box;-webkit-box-sizing: content-box; -moz-box-sizing: content-box;">
+              <div class="wheel1" style="box-sizing:content-box;-webkit-box-sizing: content-box; -moz-box-sizing: content-box;">
+                <div class="progress1" style="box-sizing:content-box;-webkit-box-sizing: content-box; -moz-box-sizing: content-box;"></div>
+              </div>
+            </div>
+            <a href="#seek" style="box-sizing:content-box;-webkit-box-sizing: content-box; -moz-box-sizing: content-box;"></a>
+            <div class="controls1" style="box-sizing:content-box;-webkit-box-sizing: content-box; -moz-box-sizing: content-box;">
+              <a href="#play">
+              </a>
+            </div>
+            <div class="info1">
+              <i><span name="current">0:00</span> / <span name="duration">0:00</span></i>
+              <label></label>
+              <small></small>
+            </div>
+          </div>
+        </div>
+            <span class="wenzi ziti_change" style="position:absolute;top:220px;left:640px;font-size:50px;color:#FFFFFF;text-align:center">请说</span>
+            <span class="wenzi ziti_change" style="position:absolute;top:280px;left:500px;font-size:50px;color:#FFFF00;text-align:center">“你好，安博士”</span>
+            <span class="wenzi ziti_change" style="position:absolute;top:340px;left:555px;font-size:50px;color:#FFFFFF;text-align:center">解锁我的功能</span>
+    </div> 
+
+
+
+
+    <!-- 自我测试界面 -->
+
+    <!-- 所有以ocd= obesessive compulsive disorder开头的均表示强迫症测试界面的相关按钮，
+             以fi = family insurance开头的均表示家庭保障测试界面相关按钮 -->
+
+    <div id="selfTestPage" style='display:none; user-select: none;'>
+      <!-- 顶部边栏 -->
+        <img id = "selfTestTitle" style="width:960px;height:48px;position:absolute;left:0px;top:0px;" src="images/yyqh/top.png"/>
+
+        
+        <div id="selfTestFirstPage" >
+          <!-- 家庭保障测试模块 -->
+          <div id="familyInsurance" style='width:300px;height:390px;position:absolute;left:130px;top:119px;  box-shadow:2px 13px 25px 3px #E8E8E8;'>
+            <img id="familyInsuranceImage" style="width:146px;height:141px; position:fixed;left:202.5px;top:185px;" src="images/self-test-xxt/family-insurance.png">
+            <p id="familyInsuranceQuestion" >你需要家庭保障吗？</p>
+
+            <div id="familyInsuranceButton" onclick="familyInsuranceTest()"><img id="test1" src="images/self-test-xxt/Oval.png" >测试</div>
+          </div>
+
+          <!-- 强迫症测试模块 -->
+          <div id="obsessiveCompulsiveDisorder" style='width:300px;height:390px;position:absolute;left:540px;top:119px;  box-shadow:2px 13px 25px 3px #E8E8E8;'>
+            <img id="ocdImage" style="width:107px;height:105px; position:fixed;left:630px;top:203px;" src="images/self-test-xxt/ocd.png">
+            <p id="ocdQuestion">你有强迫症吗？</p>
+
+            <div id="ocdButton" onclick="ocdTest()" ><img id="test2" src="images/self-test-xxt/Oval.png" >测试</div>
+          </div>
+        </div>
+
+        
+   
+    <!--*********************************************************-->
+    <!--强迫症测试部分-->
+      <div id="ocdTestPage" style="display:none;">
+        <div id='questionPage'>
+        
+        <!--测试题和选项-->
+          <div class='questionContent'>
+            <!--问题，18道问题通过js在下面的p当中显示-->
+            <div>
+              <p id='text'></p>
+            </div>
+
+            <!--选项部分，点击某个白色条形板/文字/abc图片，相应的选项均可被选中-->
+            <div class='options'>
+                <ul>
+                  <div class='whiteBoard' onclick="chooseAnswer(this);" id='option0' value='0' >
+                    <li class='option'>
+                      <p>A<span>否</span></p>
+                      <img src='images/self-test-xxt/unchosenButton.png' alt='' class='rightLogo' id='rightLogo0'>
+                    </li>
+                  </div>
+
+                  <hr class="line1"  width="400px" style="color:#DDDDDD"/>
+
+                  <div  class='whiteBoard' onclick="chooseAnswer(this);" id='option1' value='1'>
+                    <li class='option'>
+                      <p>B<span>有时会</span></p>
+                      <img src='images/self-test-xxt/unchosenButton.png' alt='' class='rightLogo' id='rightLogo1'>
+                    </li>
+                  </div>
+
+                   <hr class="line2" width="400px" style="color:#DDDDDD"/>
+
+                  <div  class='whiteBoard' onclick="chooseAnswer(this);" id='option2' value='2'>
+                    <li class='option'>
+                      <p>C<span>是</span></p>
+                      <img src='images/self-test-xxt/unchosenButton.png' alt='' class='rightLogo' id='rightLogo2'>
+                    </li>
+                  </div>
+                </ul>
+            </div>
+          </div>
+
+        <!--上一道题和下一道题的按钮，按钮是自定义的-->
+          <div class='buttonPart'>
+            <div class='btn1'><img src="images/self-test-xxt/lastQuestion.png" onclick='showPrePage();'></div>
+            <div class='btn2'><img src="images/self-test-xxt/nextQuestion.png" onclick='showNextPage();'></div>
+          </div>
+        
+        </div>
+
+
+
+        <!--*******************************************************************-->
+        <!--答案部分-->
+        <div id='answerPage' > 
+
+          <!--共有三种答案，通过js选择显示某一项-->
+          <div class='answerContent'>
+            <img src="images/self-test-xxt/resultPic.png">
+            <div id='answer1'>
+              <span>不用担心，你没有强迫症</span>
+              <p>应该不必担心会患有强迫症，注意保持健康的心理，养成良好的生活习惯。</p>
+            </div>
+
+            <div id='answer2'>
+              <span>你可能有点强迫症</span>
+              <p>有可能会患有强迫症，请向医生或专家咨询，遇到挫折时应积极面对。</p>
+            </div>
+
+            <div id='answer3'>
+              <span>高度怀疑您有强迫症</span>
+              <p>高度怀疑患有强迫症倾向，应及时就医，接受治疗，避免更严重的后果出现。</p>
+            </div>
+          </div>
+        
+          <!--重新测试按钮-->
+          <div class='buttonPart'>
+            <div class='btn'><img src="images/self-test-xxt/retestButton.png" id='retest' onclick='testAgain();'></div>
+          </div>
+
+        </div>
+      </div>
+
+    <!--家庭保障测试部分-->
+       <div id="fiTestPage" style="display:none;">
+
+        <!--测试题和选项-->
+          <div class='fiQuestionContent'>
+            <!--问题，8道问题和每道题的图片都分别通过js在下面的img和p当中显示-->
+            <div id="fiTitle">
+              <img src="" id="fiImage">
+              <p id='fiQuestiontext'></p>
+            </div>
+
+            <!--选项部分，点击某个白色条形板/文字/abc图片，相应的选项均可被选中-->
+            <div class='fiOptions'>
+                <ul>
+                  <div class='fiWhiteBoard' onclick="fiChooseAnswer(this)" id='fiOption0' value='0' >
+                    <li class='fiOption'>
+                      <p>A<span></span></p>
+                      <img src='images/self-test-xxt/unchosenButton.png' alt='' class='fiRightLogo' id='fiRightLogo0'>
+                    </li>
+                  </div>
+
+                  <hr id="fiLine0" class="fiLine"/>
+
+                  <div class='fiWhiteBoard' onclick="fiChooseAnswer(this)" id='fiOption1' value='1' >
+                    <li class='fiOption'>
+                      <p>B<span></span></p>
+                      <img src='images/self-test-xxt/unchosenButton.png' alt='' class='fiRightLogo' id='fiRightLogo1'>
+                    </li>
+                  </div>
+
+                  <hr id="fiLine1" class="fiLine"/>
+
+                  <div class='fiWhiteBoard' onclick="fiChooseAnswer(this)" id='fiOption2' value='2' >
+                    <li class='fiOption'>
+                      <p>C<span></span></p>
+                      <img src='images/self-test-xxt/unchosenButton.png' alt='' class='fiRightLogo' id='fiRightLogo2'>
+                    </li>
+                  </div>
+
+                  <hr id="fiLine2" class="fiLine"/>
+
+                  <div class='fiWhiteBoard' onclick="fiChooseAnswer(this)" id='fiOption3' value='3' >
+                    <li class='fiOption'>
+                      <p>D<span></span></p>
+                      <img src='images/self-test-xxt/unchosenButton.png' alt='' class='fiRightLogo' id='fiRightLogo3'>
+                    </li>
+                  </div>
+
+                  <hr id="fiLine3" class="fiLine"/>
+
+                  <div class='fiWhiteBoard' onclick="fiChooseAnswer(this)" id='fiOption4' value='4' >
+                    <li class='fiOption'>
+                      <p>E<span></span></p>
+                      <img src='images/self-test-xxt/unchosenButton.png' alt='' class='fiRightLogo' id='fiRightLogo4'>
+                    </li>
+                  </div>
+
+                  <hr id="fiLine4" class="fiLine"/>
+
+                  <div class='fiWhiteBoard' onclick="fiChooseAnswer(this)" id='fiOption5' value='5' >
+                    <li class='fiOption'>
+                      <p>F<span></span></p>
+                      <img src='images/self-test-xxt/unchosenButton.png' alt='' class='fiRightLogo' id='fiRightLogo5'>
+                    </li>
+                  </div>
+                </ul>
+            </div>
+          </div>
+
+        <!--上一道题和下一道题的按钮，按钮是自定义的-->
+          <div class='fiButtonPart'>
+            <div class='fiBtn1'><img src="images/self-test-xxt/lastQuestion.png" onclick='fiShowPrePage();'></div>
+            <div class='fiBtn2'><img src="images/self-test-xxt/nextQuestion.png" onclick='fiShowNextPage();'></div>
+          </div>
+      </div>
+
+
+        <!-- 底部导航图片 -->
+        <div id="selfTestFoot">
+            <img id = "selfTestReturnHome" style="position:absolute;left:756px;top:528px;" src="images/common/home.png" onclick="selfTestReturn()"/>
+            <img id = "selfTestPersonServ" style="position:absolute;left:828px;top:528px;" src="images/common/rgfw.png" onclick=""/>
+            <img id = "selfStop" style="position:absolute;left:900px;top:528px;" src="images/common/stop.png"" onclick=""/>
+        </div>
+
+      </div>
+
+
+<!--**********************************************************-->
+      <script src="js/thirdjs/index.js"></script>
+    </div>
+  </div>
+  </body>
+</html>

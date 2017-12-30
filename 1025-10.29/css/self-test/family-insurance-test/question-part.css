@@ -1,0 +1,171 @@
+/**
+* @file 本css控制家庭保障测试页面题目以及选项的样式
+* @author 许琇婷
+* @version v0.1
+*/
+
+
+/*8道题的题目对应的图片*/
+#fiTitle img{
+	left:191px;
+	top:69px;
+	width:60px;
+	height:60px;
+	position:fixed;
+}
+/*8道题的题目*/
+#fiTitle p{
+	left:273px;
+	top:86px;
+	color:#EA8F04;
+	font-size:26px;
+	position:fixed;
+	font-weight:bold;
+}
+
+
+/*选项部分*/
+.fiOptions{
+	left:190px;
+	top:151px;
+	width:580px;
+	height:284px;
+	position:fixed;
+}
+.fiWhiteBoard span{
+	padding-left:43px;
+}
+.fiWhiteBoard{
+	cursor:pointer;
+}
+
+/*单个选项文字位置*/
+#fiOption0 p{
+	left:210px;
+	top:151px;
+	color:#38322E;
+	font-size:22px;
+	position:fixed;
+	width:520px;
+}
+#fiOption1 p{
+	left:210px;
+	top:205px;
+	color:#38322E;
+	font-size:22px;
+	position:fixed;
+	width:520px;
+}
+#fiOption2 p{
+	left:210px;
+	top:257px;
+	color:#38322E;
+	font-size:22px;
+	position:fixed;
+	width:520px;
+}
+#fiOption3 p{
+	left:210px;
+	top:309px;
+	color:#38322E;
+	font-size:22px;
+	position:fixed;
+	width:520px;
+}
+#fiOption4 p{
+	left:210px;
+	top:361px;
+	color:#38322E;
+	font-size:22px;
+	position:fixed;
+	width:520px;
+}
+#fiOption5 p{
+	left:210px;
+	top:413px;
+	color:#38322E;
+	font-size:22px;
+	position:fixed;
+	width:520px;
+}
+
+
+/*单个选项后面对勾位置*/
+#fiRightLogo0{
+	left:730px;
+	top:154px;
+	width:20px;
+	height:21px;
+	position:fixed;
+}
+#fiRightLogo1{
+	left:730px;
+	top:206px;
+	width:20px;
+	height:21px;
+	position:fixed;
+}
+#fiRightLogo2{
+	left:730px;
+	top:259px;
+	width:20px;
+	height:21px;
+	position:fixed;
+}
+#fiRightLogo3{
+	left:730px;
+	top:311px;
+	width:20px;
+	height:21px;
+	position:fixed;
+}
+#fiRightLogo4{
+	left:730px;
+	top:363px;
+	width:20px;
+	height:21px;
+	position:fixed;
+}
+#fiRightLogo5{
+	left:730px;
+	top:413px;
+	width:20px;
+	height:21px;
+	position:fixed;
+}
+
+/*选项块当中分割线的设置*/
+#fiLine0{
+	top:170px;
+	position:fixed;
+	width:580px;
+	color:#DDDDDD;
+}
+
+#fiLine1{
+	top:222px;
+	position:fixed;
+	width:580px;
+	color:#DDDDDD;
+}
+
+#fiLine2{
+	top:274px;
+	position:fixed;
+	width:580px;
+	color:#DDDDDD;
+}
+
+#fiLine3{
+	top:326px;
+	position:fixed;
+	width:580px;
+	color:#DDDDDD;
+}
+
+#fiLine4{
+	top:378px;
+	position:fixed;
+	width:580px;
+	color:#DDDDDD;
+}
