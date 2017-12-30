@@ -1,0 +1,22 @@
+.navBar li:nth-child(even){
+	background-color:lightyellow;
+}
+.navBar li:nth-child(odd){
+	background-color:lightgreen;
+}
+.navBar li{
+	border:white 10px solid;
+	list-style-type:none;
+	display:inline;
+	text-align: center;
+	padding:10px;
+}
+.navBar{
+	margin-left:82px;
+	margin-top:-6px;
+	position:fixed;
+}
+.navBar li a{
+	text-decoration:none;
+}
+

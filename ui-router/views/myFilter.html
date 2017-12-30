@@ -1,0 +1,8 @@
+<!-- 过滤器-->
+    <div ng-controller='myCtrl6' class='main'>
+      过滤器搜索:<input type='text' ng-model='test'>
+      <!-- <p>{{test}}</p> -->
+      <ul>
+        <li ng-repeat="x in people | filter:test | orderBy:'city' ">{{x.name  + " " + (x.city | uppercase)}}</li>
+      </ul>
+    </div>
