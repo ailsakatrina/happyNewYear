@@ -1,0 +1,75 @@
+<html>
+<head>
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<meta charset="utf-8">
+<script src = "padding/jquery-2.0.0.min.js"></script>
+<title>about 过滤器</title>
+</head>
+<body>
+  <div id="filter_one" ng-app="filter1">
+      <div ng-controller="ctr1">
+        姓名：<input type="text" name="name" ng-model="name">
+        国家：<input type="text" name="country" ng-model="country">
+      </div>
+      <div ng-controller="ctr2">
+        单价：<input type="number" ng-model = "price">
+        数量：<input type="number" ng-model = "quantity">
+        <input type="button" ng-click="calculation();" value="计算" >
+        <p id="calcu">来自{{country | uppercase}}的{{name | lowercase}}要兑换{{(price*quantity) | currency:"RMB￥"}}</p>
+      </div>
+  </div>
+
+<hr>
+  <div id="filter_two" ng-app="filter2" ng-controller="ctr3">
+    您可以在输入框中输入字符串来筛选下列选项<input type="text" ng-model="test">
+    <ul>
+      <li ng-repeat="x in people | filter:test |orderBy:'city'">{{x.name+' , '+(x.city | uppercase)}}</li>
+    </ul>
+    <!-- filter:{'city':'DC'} -->
+    自定义filter:  <input type="text" ng-model="filter">
+    <p>{{filter | reverse}}</p>
+
+
+    <p>149016.1965000 | number:2   <span style="color:red">{{149016.1965000 | number:2}}</span></p>
+    <p>"1490160023" | limitTo:-2 <span style="color:red">{{"1490160023" | limitTo:-2}}</span></p>
+  </div>
+
+
+  <script>
+    var app1 = angular.module("filter1",[]);
+    app1.controller("ctr1",["$scope","$rootScope",ctr1]);
+    app1.controller("ctr2",["$scope",ctr2]);
+
+    function ctr1($scope,$rootScope){
+      $scope.name = "XUXIUTING";
+      $scope.country = "china";
+      $rootScope.name = $scope.name;
+      $rootScope.country = $scope.country;
+    }
+
+    function ctr2($scope){
+      $scope.price = 1;
+      $scope.quantity = 50;
+      // $scope.calculation = function(){
+      //   $("#calcu").show();
+      // }
+    }
+
+    var app2 = angular.module("filter2",[]);
+
+
+    app2.controller("ctr3",function($scope){
+      $scope.people = [{name:'张三',city:'shenzhen'},{name:'王四',city:'DC'},{name:'王五',city:'Boston'}];
+      $scope.filter = "xuxiuting";
+    });
+    app2.filter('reverse',function(){
+      return function(text){
+        return text.split("").reverse().join("");
+      }
+    });
+
+    angular.bootstrap(document.getElementById("filter_two"),['filter2']);
+
+  </script>
+</body>
+</html>
