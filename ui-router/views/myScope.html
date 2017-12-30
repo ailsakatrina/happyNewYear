@@ -1,0 +1,7 @@
+ <!-- scope & rootScope-->
+    <div ng-controller='myCtrl5'  class='main'>
+      scope & rootScope:<input type='text' ng-model='myName'>
+      <button ng-click="toggle();" ng-model='control' ng-disabled='!check'>click</button>
+      <input type='checkbox' ng-model='check'>
+      <p ng-show="control" style='color:green;'>{{myName}}<p>
+    </div>
